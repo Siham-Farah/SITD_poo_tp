@@ -5,6 +5,7 @@ import models.Module;
 public class DB {
     public static int DEPT_ID = 0;
     public static int ENS_ID = 0;
+    public static int NOT_ID = 0;
     public static int ETD_ID = 0;
     public static int FIL_ID = 0;
     public static int MOD_ID = 0;
@@ -34,6 +35,10 @@ public class DB {
     public  static int getModId(){
         MOD_ID++;
         return ETD_ID;
+    }
+    public  static int getNoteId(){
+        NOT_ID++;
+        return NOT_ID;
     }
 
 }

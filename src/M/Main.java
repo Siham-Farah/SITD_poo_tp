@@ -53,6 +53,7 @@ public class Main {
         System.out.println("3: Pour gérer les enseignants");
         System.out.println("4: Pour gérer les modules");
         System.out.println("5: Pour gérer les étudiants");
+        System.out.println("6: Pour gérer les notes");
         System.out.println("0: Pour sortir");
 
         //"Veuillez sélectionner une option : ")
@@ -72,6 +73,9 @@ public class Main {
             case 5:
                 EtudiantsController.showMenu();
                 break;
+            case 6:
+                NotesController.showMenu();
+                break;
             default:
                 // code block
         }
@@ -90,5 +94,6 @@ public class Main {
         DB.enseignants.add(enseignant);
         showPrincipalMenu();
     }
+
 
 }
