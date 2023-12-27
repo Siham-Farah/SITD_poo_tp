@@ -2,11 +2,15 @@
 package controllers;
 
 import M.Main;
+import models.Etudiant;
 import models.Module;
 import models.Note;
 import services.DB;
+import services.EtudiantService;
 import services.ModuleService;
 import services.NoteService;
+
+import static controllers.EtudiantsController.showEtudiant;
 
 public class NotesController {
     public static void showMenu() {
@@ -40,6 +44,7 @@ public class NotesController {
         for (Note note : DB.notes) {
             System.out.print("Id : " + note.getId());
             System.out.print(" | Module : " + note.getModule().getIntitule());
+            System.out.print(" | Etudiant : " + note.getEtudiant().getNom());
             System.out.print(" | Valeur : " + note.getValeur());
             System.out.println("");
         }
@@ -48,10 +53,11 @@ public class NotesController {
     public static void createNote() {
         showModules();
         int moduleId = Main.getIntInput("Sélectionnez un module par id :");
+        showEtudiant();
+        int EtudeId = Main.getIntInput("Sélectionnez un etudiant par id :");
         int value = Main.getIntInput("Entrez la valeur de la note :");
         Module module = ModuleService.getModuleById(moduleId);
-
-        NoteService.addNote(module, value);
+        Etudiant etudiant= EtudiantService.getEtdById(EtudeId);
         showNotes();
         showMenu();
     }

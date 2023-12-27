@@ -1,14 +1,15 @@
 // services/NoteService.java
 package services;
 
+import models.Etudiant;
 import models.Module;
 import models.Note;
 
 import java.util.ArrayList;
 
 public class NoteService {
-    public static Note addNote(Module module, double value) {
-        Note note = new Note(module, value);
+    public static Note addNote(Module module, double value, Etudiant etudiant) {
+        Note note = new Note(module, value, etudiant);
         note.setId(DB.getNoteId());
         DB.notes.add(note);
         return note;

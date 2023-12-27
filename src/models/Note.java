@@ -5,9 +5,9 @@ public class Note {
     private double valeur;
     private Etudiant etudiant;
     private Module module;
-    public Note(Module module, double valeur ) {
+    public Note(Module module, double valeur, Etudiant etudiant ) {
         this.valeur = valeur;
-        this.module = module;
+        this.module = module; this.etudiant = etudiant;
     }
     public Note() {}
 
